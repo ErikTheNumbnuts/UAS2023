@@ -126,7 +126,7 @@ class Transfer implements Transaction {
         return "Transfer: " + amount + " dari " + sourceCustomer.getUsername() + " ke " + destinationCustomer.getUsername();
     }
 
-    // Getter method for destinationCustomer
+    // Method get untuk mengambil nama tujuan transfer pengguna (destinationCustomer)
     public Customer getDestinationCustomer() {
         return destinationCustomer;
     }
@@ -180,7 +180,7 @@ class Bank {
     }
 }
 
-// Class untuk aplikasi konsol
+// Class untuk aplikasi UAS
 public class UAS {
     private static Bank bank = new Bank();
     public static void main(String[] args) {
@@ -204,7 +204,7 @@ public class UAS {
 
             System.out.println("Masukan Pilihan:");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume the newline character
+            scanner.nextLine(); // scan untuk pilihan opsi
 
             switch (choice) {
                 case 1:
@@ -223,7 +223,7 @@ public class UAS {
         }
     }
 
-    private static void userLogin(Bank bank) {
+    private static void userLogin(Bank bank) { //login untuk pengguna bank
         Scanner scanner = new Scanner(System.in);
         System.out.println("Masukan username:");
         String username = scanner.nextLine();
@@ -240,7 +240,7 @@ public class UAS {
         System.out.println("Username atau password salah.");
     }
 
-    private static void adminLogin(Admin admin, Bank bank) {
+    private static void adminLogin(Admin admin, Bank bank) { //login untuk admin bank
         Scanner scanner = new Scanner(System.in);
         System.out.println("Masukan admin username:");
         String username = scanner.nextLine();
@@ -254,7 +254,7 @@ public class UAS {
         }
     }
 
-    private static void performUserActions(Customer customer) {
+    private static void performUserActions(Customer customer) {//pilihan untuk pengguna bank
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
@@ -267,7 +267,7 @@ public class UAS {
 
             System.out.println("Masukan pilihan:");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume the newline character
+            scanner.nextLine(); // scan untuk pilihan opsi
 
             switch (choice) {
                 case 1:
@@ -300,7 +300,7 @@ public class UAS {
         }
     }
 
-    private static void performAdminActions(Admin admin, Bank bank) {
+    private static void performAdminActions(Admin admin, Bank bank) {//pilihan untuk admin bank
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
